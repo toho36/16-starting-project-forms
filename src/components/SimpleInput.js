@@ -24,6 +24,7 @@ const SimpleInput = (props) => {
     }
     console.log(enteredName);
     setEnteredName('');
+    setEnteredNameTouched(false);
   };
   const nameInputClass = nameInputIsInvalid
     ? 'form-control invalid'
