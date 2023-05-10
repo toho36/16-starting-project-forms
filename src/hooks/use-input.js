@@ -9,12 +9,12 @@ const inputStateReducer = (state, action) => {
     return { value: action.value, isTouched: state.isTouched };
   }
   if (action.type === 'BLUR') {
-    return { isTouched: true };
+    return { isTouched: true, value: state.value };
   }
   if (action.type === 'RESET') {
-    return { isTouched: true, value: '' };
+    return { isTouched: false, value: '' };
   }
-  return inputStateReducer;
+  return state;
 };
 
 const useInput = (validateValue) => {
